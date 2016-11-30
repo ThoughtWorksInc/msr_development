@@ -1,0 +1,16 @@
+FROM nimmis/ubuntu:14.04
+ENV DEBIAN_FRONTEND noninteractive
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+RUN add-apt-repository ppa:openjdk-r/ppa -y && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends openjdk-8-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
+ADD ./dropwizard-sample-app/target/dropwizard-example-0.7.0-SNAPSHOT.jar /data/dropwizard-example-0.7.0-SNAPSHOT.jar
+ADD ./dropwizard-sample-app/example.keystore /data/example.keystore
+ADD ./dropwizard-sample-app/example.yml /data/example.yml
+
+RUN java -jar /data/dropwizard-example-0.7.0-SNAPSHOT.jar db migrate /data/example.yml ; cp /data/example.keystore /root
+CMD java -jar /data/dropwizard-example-0.7.0-SNAPSHOT.jar server /data/example.yml
+
+EXPOSE 8082 8083

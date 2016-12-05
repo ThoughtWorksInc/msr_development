@@ -1,3 +1,4 @@
+#TODO: remove existing repos
 git clone https://github.com/Appdynamics/dropwizard-sample-app
 git clone https://github.com/ChrisJTaylor/java-sandbox
 

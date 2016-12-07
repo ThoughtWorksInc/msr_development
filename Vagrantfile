@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
     vb.name = "Local Dev"
   end
 
-  config.vm.provision "shell", path: "scripts/bootstrap.sh" 
+  config.vm.provision "shell", path: "scripts/bootstrap.sh", env: {"FAST_PROVISION" => ENV["FAST_PROVISION"]}
   # config.vm.provision "file", source: "build.sh", destination: "build.sh"
   # config.vm.provision "file", source: "Dockerfile.ubuntu", destination: "Dockerfile.ubuntu"
   # config.vm.provision "file", source: "Dockerfile.alpine", destination: "Dockerfile.alpine"

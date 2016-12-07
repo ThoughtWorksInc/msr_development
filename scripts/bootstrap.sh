@@ -20,6 +20,9 @@ update-alternatives --config javac
 echo "Installing git, unzip and docker..."
 apt-get install -y git unzip docker.io
 
+sudo groupadd docker
+sudo gpasswd -a vagrant docker
+
 echo -e "\nInstalling Gradle..."
 mkdir -p /usr/local/opt/gradle
 if which gradle 2> /dev/null ; then

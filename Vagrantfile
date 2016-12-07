@@ -16,7 +16,8 @@ Vagrant.configure("2") do |config|
   
 
   #TODO sync local repos to the vagrant box
-  # config.vm.synced_folder "../data", "/vagrant_data"
+  config.vm.synced_folder "spring-boot-example", "/var/spring-boot-example", 
+                          type: "rsync", rsync__exclude: [".git/", "build/"]
 
   config.vm.provider "virtualbox" do |vb|
     vb.memory = 4096

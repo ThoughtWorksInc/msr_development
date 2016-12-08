@@ -15,7 +15,7 @@ function init_vagrant() {
 
 function download_vagrant() {
 	VAGRANT_DOWNLOAD_URL="https://releases.hashicorp.com/vagrant/1.9.0/vagrant_1.9.0.dmg"
-	wget $VAGRANT_DOWNLOAD_URL -O ~/Desktop/$(basename $VAGRANT_DOWNLOAD_URL)
+	curl "$VAGRANT_DOWNLOAD_URL" -o ~/Desktop/$(basename $VAGRANT_DOWNLOAD_URL)
 	echo "Vagrant is downloaded to your Desktop. Install it, and rerun this script"
 	exit 0
 }

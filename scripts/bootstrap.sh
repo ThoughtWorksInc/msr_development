@@ -22,14 +22,3 @@ apt-get install -y git unzip docker.io
 
 sudo groupadd docker
 sudo gpasswd -a vagrant docker
-
-echo -e "\nInstalling Gradle..."
-mkdir -p /usr/local/opt/gradle
-if which gradle 2> /dev/null ; then
-	gradle --stop 2>&1
-fi
-wget https://services.gradle.org/distributions/gradle-3.2.1-bin.zip -O /tmp/gradle-3.2.1-bin.zip --no-verbose
-unzip -o /tmp/gradle-3.2.1-bin.zip -d /usr/local/opt/gradle
-cat > /etc/profile.d/gradle.sh << 'EOF'
-export PATH=$PATH:/usr/local/opt/gradle/gradle-3.2.1/bin
-EOF

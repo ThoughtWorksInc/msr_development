@@ -26,5 +26,7 @@ Vagrant.configure("2") do |config|
     vb.name = "Local Dev"
   end
 
+  config.vm.provision "file", source: "assets/mysql-apt-config_0.8.0-1_all.deb", destination: ".setup/mysql-apt-config_0.8.0-1_all.deb"
+  config.vm.provision "file", source: "scripts/mysql_setup.sh", destination: "mysql_setup.sh"
   config.vm.provision "shell", path: "scripts/bootstrap.sh"
 end

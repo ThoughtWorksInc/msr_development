@@ -26,10 +26,9 @@ However, make sure you start it only when the virtual machine is running, and te
 the VM (using `vagrant halt` or `vagrant reload`).
 
 ## Installing MySQL
-You can use a script to help setup a MySQL installation. However, this requires some manual
-actions.
+You can use a script to help setup a MySQL installation. However, this requires some manual actions.
 
-1. If you haven’t already, start the virtual machine with `vagrant up` and use `vagrant ssh` to open a new shell.
+1. If you haven’t already, start the virtual machine with `vagrant up --provision` and use `vagrant ssh` to open a new shell.
 2. Run `./mysql_setup.sh`.
 3. When prompted to select the packages to install, accept the defaults and the use arrow keys to select the OK option and press Enter.
 4. Type `Y` to accept installation of the server.

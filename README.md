@@ -31,6 +31,6 @@ You can use a script to help setup a MySQL installation. However, this requires 
 1. If you haven’t already, start the virtual machine with `vagrant up --provision` and use `vagrant ssh` to open a new shell.
 2. Run `./mysql_setup.sh`.
 3. When prompted to select the packages to install, accept the defaults and the use arrow keys to select the OK option and press Enter.
-4. Type `Y` to accept installation of the server.
-5. When prompted, leave the password blank; use the arrow keys to select OK and press Enter.
+4. A list of packages will be downloaded. When prompted, type `Y` to accept installation of the server.
+5. When prompted, leave the password blank and press Enter.
 6. If the installation process was successful, you should see a message stating “MySQL Community Server 5.7.16 is running”.

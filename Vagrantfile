@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
   for port in 8080..8085
     config.vm.network :forwarded_port, guest: port, host: port, protocol: "tcp"
   end
+  config.vm.network :forwarded_port, guest: 27017, host: 27017, protocol: "tcp"
 
   File.foreach('repositories.txt') do |repo|
     /.*\/([\w-]+)\.git/ =~ repo

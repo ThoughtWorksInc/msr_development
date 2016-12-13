@@ -12,3 +12,6 @@ update-alternatives --config javac
 
 echo "Installing git, unzip and docker..."
 apt-get install -y git=1:1.9.1\* unzip=6.0\* docker.io=1.6.2\*
+
+echo "Spinning up docker container from Mongo image..."
+docker run --name mongo -p 27017:27017 -d mongo:latest

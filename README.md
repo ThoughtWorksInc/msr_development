@@ -27,4 +27,4 @@ the VM (using `vagrant halt` or `vagrant reload`).
 
 ## Using the Mongo docker image
 You can spin up a new docker container from the Mongo image by using the following command:
-`docker run --name my_local_mongo -i -p 8085:27017 -t mongo`
+`docker run --name my_local_mongo -i -p 27107:27017 -t mongo`
